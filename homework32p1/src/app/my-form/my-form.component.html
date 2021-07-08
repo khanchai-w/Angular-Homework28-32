@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-success" style="height: 100px;">
+
+</nav>
+<div class="container kc-content">
+  <div class="row">
+  <div class="col">
+  <div class="card">
+    <div class="card-body">
+      <div [formGroup]="form" class="form-group">
+        <div class="form-group">
+          <span  for="name">Name</span><span class="text-danger">*</span>
+          <input  class="form-control"  type="text" formControlName="name" placeholder="Your Answer">
+          <span class="text-danger" *ngIf="form.get('name').errors?.required">Name Required</span>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="email">E-mail:</label><span class="text-danger">*</span>
+          <input  class="form-control"  type="text" formControlName="email" placeholder="Your Answer">
+          <span class="text-danger" *ngIf="form.get('email').errors?.required">Email Required</span>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="postalAddress">Postal Address:</label><span class="text-danger">*</span>
+          <input class="form-control"  type="text" formControlName="postalAddress" placeholder="Your Answer">
+          <span class="text-danger" *ngIf="form.get('postalAddress').errors?.required">Postal Address Required</span>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="comments">Comments:</label>
+          <input class="form-control"  type="text" formControlName="comments" placeholder="Your Answer">
+        </div>
+        <br>
+        <div class="form-group">
+          <button [disabled]="form.invalid" (click)="submitForm()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
