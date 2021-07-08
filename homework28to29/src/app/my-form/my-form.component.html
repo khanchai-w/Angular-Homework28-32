@@ -1,0 +1,31 @@
+<form [formGroup]="form"> my-form.component.html
+  <div>
+  Phone : <input formControlName="phoneNo">
+  </div>
+  <div>
+  Email : <input formControlName="email">
+  <span style="color: red;" *ngIf="form.get('email').errors?.required">email required</span>
+  </div>
+  <div>
+  Password : <input type="password" formControlName="password">
+  <span style="color: red;" *ngIf="form.get('password').errors?.required">Password
+  required</span>
+  <span style="color: red;" *ngIf="form.get('password').errors?.minlength">Password should be at
+  least 8
+  characters </span>
+  </div>
+  <div>
+  Confirm Password : <input type="password" formControlName="confirmPassword">
+  <span style="color: red;" *ngIf="form.get('confirmPassword').errors?.required">Password
+    required</span>
+</div>
+<div>
+  <button [disabled]="form.invalid" (click)="submitForm()">Submit</button>
+</div>
+  </form>
+  <p>
+  Form Data Below
+  </p>
+  <code>
+  {{form.value | json}}
+  </code>
