@@ -1,0 +1,109 @@
+<h1>LIST DATA FORM API By Khanchai CTF020702</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="list/posts" >Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="list/comments">Comments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="list/albums">Albums</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="list/photos">Photos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="list/todos">Todos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="list/users">Users</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div *ngIf="posts.length>0" >
+  <h1>Posts list</h1>
+  <div *ngFor="let post of posts"
+    style="border: 1px solid gray;
+    margin: 4px; padding: 4px;">
+    <h4>User ID: #{{post.id}}</h4>
+    <span>ID: {{post.id}}</span>
+    <span>Title: {{post.title}}</span>
+    <span>Body: {{post.body}}</span>
+  </div>
+</div>
+
+<div *ngIf="comments.length>0" >
+  <h1>Comments list</h1>
+  <div *ngFor="let row of comments"
+    style="border: 1px solid gray;
+    margin: 4px; padding: 4px;">
+    <h4>Comment ID: #{{row.id}}</h4>
+    <p>ID: {{row.id}}</p>
+    <p>Name: {{row.name}}</p>
+    <p>Email: {{row.email}}</p>
+    <p>Body: {{row.body}}</p>
+  </div>
+</div>
+
+
+<div *ngIf="albums.length>0" >
+  <h1>Albums list</h1>
+  <div *ngFor="let row of albums"
+    style="border: 1px solid gray;
+    margin: 4px; padding: 4px;">
+    <h4>UserID: #{{row.userId}}</h4>
+    <a>ID: {{row.id}}</a>
+    <a>Title: {{row.title}}</a>
+  </div>
+</div>
+
+
+<div *ngIf="photos.length>0" >
+  <h1>Photos list</h1>
+  <div *ngFor="let row of photos"
+    style="border: 1px solid gray;
+    margin: 4px; padding: 4px;">
+    <h4>Post ID: #{{row.albumId}}</h4>
+    <img src="{{row.thumbnailUrl}}" alt="">
+    <h3>ID: {{row.id}}</h3>
+    <p>Title: {{row.title}}</p>
+    <p>URL: {{row.url}}</p>
+  </div>
+</div>
+
+
+<div *ngIf="todos.length>0" >
+  <div *ngFor="let row of todos"
+    style="border: 1px solid gray;
+    margin: 4px; padding: 4px;">
+    <h4>User ID: #{{row.userId}}</h4>
+    <p>ID: {{row.id}}</p>
+    <p>title: {{row.title}}</p>
+    <p>complete: {{row.complete}}</p>
+  </div>
+</div>
+
+
+<div *ngIf="users.length>0" >
+  <div *ngFor="let row of users"
+    style="border: 1px solid gray;
+    margin: 4px; padding: 4px;">
+    <h4>ID: #{{row.id}}</h4>
+    <p>name: {{row.name}}</p>
+    <p>username: {{row.username}}</p>
+    <p>Email: {{row.email}}</p>
+    <p>address: {{ row.address.city}}</p>
+    <p>phone: {{ row.phone}}</p>
+    <p>web site: {{ row.website}}</p>
+    <p>company: {{ row.company}}</p>
+  </div>
+</div>
+
+
+
